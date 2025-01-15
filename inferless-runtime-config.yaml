@@ -1,5 +1,0 @@
-build:
-  cuda_version: "12.1.1"
-  python_packages:
-    - "vllm==0.6.6.post1"
-    - "transformers==4.47.1"

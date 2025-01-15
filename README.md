@@ -4,7 +4,7 @@
  Phi-4 stands out for its exceptional capabilities in complex reasoning tasks, particularly in mathematics and science.
 
 ## TL;DR:
-- Deployment of Phi-4 model using [vllm](https://github.com/vllm-project/vllm).
+- Deployment of Phi-4 model using [vLLM](https://github.com/vllm-project/vllm).
 - Dependencies defined in `inferless-runtime-config.yaml`.
 - GitHub/GitLab template creation with `app.py`, `inferless-runtime-config.yaml` and `inferless.yaml`.
 - Model class in `app.py` with `initialize`, `infer`, and `finalize` functions.

@@ -5,7 +5,7 @@ from transformers import AutoTokenizer
 class InferlessPythonModel:
     def initialize(self):
         model_id = "microsoft/phi-4"
-        self.llm = LLM(model=model_id)
+        self.llm = LLM(model=model_id,enforce_eager=True)
         self.tokenizer = AutoTokenizer.from_pretrained(model_id)
 
     def infer(self, inputs):

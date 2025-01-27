@@ -1,6 +1,5 @@
 from vllm import LLM
 from vllm.sampling_params import SamplingParams
-from transformers import AutoTokenizer
 import inferless
 from pydantic import BaseModel, Field
 from typing import Optional
@@ -22,15 +21,13 @@ class InferlessPythonModel:
     def initialize(self):
         model_id = "microsoft/phi-4"
         self.llm = LLM(model=model_id,enforce_eager=True)
-        self.tokenizer = AutoTokenizer.from_pretrained(model_id)
 
     def infer(self, request: RequestObjects) -> ResponseObjects:
         sampling_params = SamplingParams(temperature=request.temperature,top_p=request.top_p,
                                          repetition_penalty=request.repetition_penalty,
                                          top_k=request.top_k,max_tokens=request.max_tokens
                                         )
-        input_text = self.tokenizer.apply_chat_template([{"role": "user", "content": request.prompt}], tokenize=False)
-        result = self.llm.generate(input_text, sampling_params)
+        result = self.llm.generate(request.prompt, sampling_params)
         result_output = [output.outputs[0].text for output in result]
         
         generateObject = ResponseObjects(generated_text = result_output[0])        

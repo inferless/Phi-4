@@ -20,7 +20,7 @@ class ResponseObjects(BaseModel):
     
 class InferlessPythonModel:
     def initialize(self):
-        model_id = "microsoft/phi-4"
+        model_id = "microsoft/phi-2"
         self.llm = LLM(model=model_id,enforce_eager=True)
         self.tokenizer = AutoTokenizer.from_pretrained(model_id)
 

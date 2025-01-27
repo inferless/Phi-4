@@ -6,7 +6,7 @@
 ## TL;DR:
 - Deployment of Phi-4 model using [vLLM](https://github.com/vllm-project/vllm).
 - Dependencies defined in `inferless-runtime-config.yaml`.
-- You can expect an average tokens/sec of `47.14` and a latency of `2.78` sec for generating a text of `128` tokens. This setup has an average cold start time of `39.95` sec.
+- You can expect an average tokens/sec of `47.14` and a latency of `2.78` sec for generating a text of `128` tokens. This setup has an average cold start time of `32.6` sec.
 - GitHub/GitLab template creation with `app.py`, `inferless-runtime-config.yaml` and `inferless.yaml`.
 - Model class in `app.py` with `initialize`, `infer`, and `finalize` functions.
 - Custom runtime creation with necessary system and Python packages.

@@ -19,7 +19,7 @@ class ResponseObjects(BaseModel):
     
 class InferlessPythonModel:
     def initialize(self):
-        model_id = "microsoft/phi-4"
+        model_id = "microsoft/phi-1"
         self.llm = LLM(model=model_id,enforce_eager=True)
 
     def infer(self, request: RequestObjects) -> ResponseObjects:

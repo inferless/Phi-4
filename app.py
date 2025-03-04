@@ -10,7 +10,7 @@ class InferlessPythonModel:
 
     def infer(self, inputs):
         prompt = inputs["prompt"]
-        system_prompt = inputs["system_prompt"]
+        system_prompt = inputs.get("system_prompt","You are a friendly bot.")
         temperature = inputs.get("temperature",0.7)
         top_p = inputs.get("top_p",0.1)
         repetition_penalty = inputs.get("repetition_penalty",1.18)

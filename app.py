@@ -1,7 +1,7 @@
 from vllm import LLM
 from vllm.sampling_params import SamplingParams
 from transformers import AutoTokenizer
-from time import perf
+from time import perf_counter
 
 class InferlessPythonModel:
     def initialize(self):
